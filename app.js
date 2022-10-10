@@ -14,48 +14,6 @@ const PORT = process.env.PORT || 3000
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
 
-// async function main(){
-//     try {
-        
-//         await client.connect();
- 
-        
-//         databasesList = await client.db().admin().listDatabases();
- 
-//         console.log("Databases:");
-//         databasesList.databases.forEach(db => console.log(` - ${db.name}`));
-
-//         posts = await client.db("best-college-football-teams").collection("teams").findOne();
-
-//         console.log(posts); 
-        
-//         return posts; 
-        
-
-
-//     } catch (e) {
-//         console.error(e);
-//     } finally {
-//         await client.close();
-//     }
-// }
-
-
-
-
-// app.get('/', async function (req, res) {
-
-
-//     const result = await main().catch(console.error);
-
-//     console.log("results: ", result.title); 
-
-//    res.send(`results:  ${ result.title }`); 
-
-//     });
-
-// app.listen(PORT, console.log(`server is running on port: ${PORT}` ));
-
 MongoClient.connect(process.env.MONGO_URI, { useUnifiedTopology: true })
   .then(client => {
     console.log('Connected to Database')
