@@ -1,6 +1,5 @@
-# reach-quebec
-Dev Lab QUEBEC
-User Story (👕 large)
+# Dev Lab QUEBEC
+User Story 
 As an individual dev
 
 I want to demonstrate a full stack data round trip
