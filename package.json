@@ -1,0 +1,33 @@
+{
+  "dependencies": {
+    "body-parser": "^1.20.1",
+    "dotenv": "^16.0.3",
+    "ejs": "^3.1.8",
+    "env": "^0.0.2",
+    "express": "^4.18.2",
+    "mongo": "^0.1.0"
+  },
+  "name": "reach-quebec",
+  "description": "",
+  "version": "1.0.0",
+  "main": "app.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "engines": {
+    "node": "18.x",
+    "npm": "8.x"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kiikz/reach-quebec.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Kiikz/reach-quebec/issues"
+  },
+  "homepage": "https://github.com/Kiikz/reach-quebec#readme"
+}
