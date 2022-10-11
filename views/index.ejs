@@ -29,10 +29,11 @@
             <span>Name: <%= teams[i].team %></span><br>
             <span>Quote: <%= teams[i].quote %></span><br>
             <form action="/updateTeam/<%= teams[i]._id %>" method="post">
-              <input type="submit" value = "Update" onClick="return confirm('This will update the selected team.')" />
+              <input type="submit" value = "Update"  />
             </form>
             <form action="/deleteTeam/<%= teams[i]._id %>" method="post">
-              <input type="submit" value = "Delete" onClick="return confirm('This will delete the selected team.')" />
+              <input type="submit" value = "Delete"  />
+              
             </form>
             <div> <br> </div>
         </li>
