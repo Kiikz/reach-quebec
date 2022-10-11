@@ -13,7 +13,7 @@ $(".delete").click(function(){
     console.log("update button clicked");
     var id2 = $(this).attr("id");
   
-    fetch(`teams`, {
+    fetch(`teams/team_id:{id2}`, {
       method: "put",
       header: {'Content-Type': 'applications/json'}
     })

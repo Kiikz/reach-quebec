@@ -2,9 +2,12 @@ require("dotenv").config();
 const express = require('express')
 const path = require('node:path')
 const bodyParser = require('body-parser')
-const { MongoClient, ServerApiVersion } = require('mongodb');
-const client = new MongoClient(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
+const MongoClient = require('mongodb').MongoClient
+// const { MongoClient, ObjectID } = require('mongodb');
+// const { MongoClient, ServerApiVersion } = require('mongodb');
+// const client = new MongoClient(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
 const app = express()
+const { ObjectId } = require('mongodb');
 let posts = ''; 
 
 // dotenv.config({path:'config.env'});
@@ -46,27 +49,30 @@ MongoClient.connect(process.env.MONGO_URI, { useUnifiedTopology: true })
     })
 
 
-    app.post('updateTeam/:id', async (req, res) => {
-        let result = await teamsCollection.findOneAndUpdate(
+    app.post('/updateTeam/:id', async (req, res) => {
+        let result = await quotesCollection.findOneAndUpdate(
         {
-            "team": String(req.params.id)
+            "_id": ObjectId(req.params.id)
         },
         {
           $set: {
             team: 'Arkansas',
-            quote: 'Woo Pig'
+            quote: 'Woo Pig Sooie'
             }
         }
       )
-        .then(result => res.json('Success'))
+        .then(result => {
+          console.log(result);
+          res.redirect('/');
+        })
         .catch(error => console.error(error))
     })
 
-    app.post('/deleteTeam/team', async (req, res) => {
-     
+    app.post('/deleteTeam/:id', async (req, res) => 
+    {
         let result = await quotesCollection.findOneAndDelete( 
             {
-              "_id": ObjectId  (req.params.id)
+              "_id": ObjectId(req.params.id)
             }
           )
           .then(result => {

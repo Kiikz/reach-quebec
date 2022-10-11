@@ -28,11 +28,11 @@
         <li class = "teams">
             <span>Name: <%= teams[i].team %></span><br>
             <span>Quote: <%= teams[i].quote %></span><br>
-            <form action="/deleteTeam/<%= teams._id %>" method="post">
-              <input type="submit" value = "Delete" onClick="return confirm('This will delete the selected team.')" />
-            </form>
-            <form action="/updateTeam/<%= teams._id %>" method="post">
+            <form action="/updateTeam/<%= teams[i].team %>" method="post">
               <input type="submit" value = "Update" onClick="return confirm('This will update the selected team.')" />
+            </form>
+            <form action="/deleteTeam/<%= teams[i]._id %>" method="post">
+              <input type="submit" value = "Delete" onClick="return confirm('This will delete the selected team.')" />
             </form>
             <div> <br> </div>
         </li>
